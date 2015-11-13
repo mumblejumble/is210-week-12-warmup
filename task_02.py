@@ -7,8 +7,14 @@ import datetime
 
 
 class InvalidAgeError(Exception):
+    """Exception Class"""
     pass
 
+
 def get_age(birthyear):
+    """Function that tests age"""
     age = datetime.datetime.now().year - birthyear
-    return age
+    if age < 0:
+        raise InvalidAgeError()
+    else:
+        return age
