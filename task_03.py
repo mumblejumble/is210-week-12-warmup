@@ -10,6 +10,15 @@ class CustomLogger(object):
     """CustomLogger Class"""
 
     def __init__(self, logfilename):
+        """Constructor for CustomError class
+
+        Args:
+            logfilename(mixed): logfilename of CustomError Class
+
+        Attributes:
+            logfilename(mixed): logfilename of CustomError Class
+            msgs(list): list of tuples.
+        """
         self.logfilename = logfilename
         self.msgs = []
 
@@ -20,7 +29,11 @@ class CustomLogger(object):
         self.msgs.append((timestamp, msg))
 
     def flush(self):
-        """flush function that logs error"""
+        """flush function that logs error
+
+        Attributes:
+            handled(list): handled list of error message.
+        """
         handled = []
         try:
             fhandler = open(self.logfilename, 'a')
